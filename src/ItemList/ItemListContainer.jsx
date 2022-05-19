@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { Container, Row } from "react-bootstrap";
 import Spinner from "react-bootstrap/Spinner";
 import { obtenerProductos } from "../Utiles/funciones";
-
 import { ItemListBanner } from "./ItemListBanner";
 
 export default function ItemListContainer() {

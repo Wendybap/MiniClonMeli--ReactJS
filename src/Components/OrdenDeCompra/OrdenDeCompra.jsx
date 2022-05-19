@@ -17,22 +17,10 @@ import Swal from "sweetalert2";
 
 export default function OrdenDeCompra() {
   const { cart, clear, sumatoria } = useContext(CartContext);
-  // Creamos los estados para iniciar el formulario (orden de compra)
-  // Los cuales inician con un string vacio
-  const [nombre, setNombre] = useState("");
-  const [apellido, setApellido] = useState("");
-  const [email, setEmail] = useState("");
-  const [telefono, setTelefono] = useState("");
+
   const [ordenEnviada, setOrdenEnviada] = useState(false);
 
-  useEffect(() => {
-    console.log(nombre, apellido, email, telefono);
-  }, [nombre, apellido, email, telefono]);
-
   function terminarCompra(valores) {
-    console.log(valores);
-    // la función serverTimestamp carga la fecha real al momento que el servidor recibe los datos
-    // es decir carga la fecha del servidor (backend y no del front(ojo no hacer esta fecha con new Date()de JS))
     const fecha = serverTimestamp();
 
     // Crear el objeto:
@@ -43,7 +31,7 @@ export default function OrdenDeCompra() {
         email: valores.email,
         telefono: valores.telefono,
       },
-      // aqui tengo que meter el carrito [{ id, nombre, precio, fecha }]
+      //  carrito [{ id, nombre, precio, fecha }]
       item: cart,
       total: sumatoria(),
       date: fecha,
@@ -70,9 +58,7 @@ export default function OrdenDeCompra() {
     ));
   }
 
-  // VALIDACION
-  // defino la funcion que va a ejecutar las validaciones del formulario y que va a
-  // recibir como parametro mi funcion validarFormulario
+  // VALIDACION formulario
 
   return (
     <>
@@ -152,7 +138,6 @@ export default function OrdenDeCompra() {
             }
             return errores;
           }}
-          // esta funcion onSubmit es para acceder a los valores de objeto de formik
           onSubmit={(valores, { resetForm }) => {
             resetForm();
             clear();
@@ -184,10 +169,6 @@ export default function OrdenDeCompra() {
                         type="text"
                         placeholder="Escriba sus nombres"
                         value={values.nombres}
-                        // value={nombre}
-                        // onChange={(evento) => {
-                        //   setNombre(evento.currentTarget.value);
-                        // }}
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
@@ -204,10 +185,6 @@ export default function OrdenDeCompra() {
                         required
                         type="text"
                         placeholder="Escriba sus apellidos"
-                        // value={apellido}
-                        // onChange={(evento) => {
-                        //   setApellido(evento.currentTarget.value);
-                        // }}
                         value={values.apellidos}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -225,10 +202,6 @@ export default function OrdenDeCompra() {
                         required
                         type="email"
                         placeholder="ejemplo@ejemplo.com"
-                        // value={email}
-                        // onChange={(evento) => {
-                        //   setEmail(evento.currentTarget.value);
-                        // }}
                         value={values.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -246,10 +219,6 @@ export default function OrdenDeCompra() {
                         required
                         type="text"
                         placeholder="+54 9 1140588749"
-                        // value={telefono}
-                        // onChange={(evento) => {
-                        //   setTelefono(evento.currentTarget.value);
-                        // }}
                         value={values.telefono}
                         onChange={handleChange}
                         onBlur={handleBlur}

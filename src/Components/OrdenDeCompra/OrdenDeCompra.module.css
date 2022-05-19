@@ -24,7 +24,7 @@
 .formulario input,
 .formulario textarea {
   font-family: "Open Sans", sans-serif;
-  /* width: 100%; */
+  width: 100%;
   border-radius: 5px;
   border: 2px solid #e2e2e2;
   font-size: 18px;

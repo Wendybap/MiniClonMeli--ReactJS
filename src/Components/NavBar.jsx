@@ -30,7 +30,6 @@ export default function NavBar() {
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
-
           <Navbar.Brand as={Link} to="/cart" className="pull-xs-right">
             <CartWidget />
           </Navbar.Brand>

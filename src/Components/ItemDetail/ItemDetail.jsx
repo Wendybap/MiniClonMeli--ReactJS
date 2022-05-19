@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount";
 
 export default function ItemDetail({ producto }) {
-  // Creo un Estado para guardar el numero que itera
-  // que va a utilizar el contador dentro de la funcion onAdd que inicializa en 0
   const [numero, setNumero] = useState(0);
   function onAdd(contador) {
     setNumero(contador);
