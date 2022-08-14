@@ -1,8 +1,8 @@
-# Proyecto app-wendy-arcia
+# Proyecto MiniClonMeli--ReactJS
 
-Proyecto final del Curso de React Js de CODERHOUSE!!!!
+Proyecto final del Curso de React JS de CODERHOUSE!!!!
 
-![image](videoReadme.gif)
+![image](ReactApp.gif)
 
 ## Framework y librerías utilizadas en este proyecto:
 
@@ -32,6 +32,9 @@ Este proyecto utilizó Firebase para la base de datos y para hacer el deployment
 
 - npm run build
 - firebase deploy
+- Link al deploy
+
+## https://app-wendy-arcia.web.app
 
 ## 4.- sweetalert2 en su versión "^11.4.14"
 
